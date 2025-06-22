@@ -8,8 +8,12 @@ vim.g.localleader = ' '
 vim.g.have_nerd_font = nixCats 'have_nerd_font'
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
+-- search
+vim.opt.incsearch = true
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -30,9 +34,6 @@ vim.opt.updatetime = 250
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-
 -- tab / indentation
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -40,3 +41,13 @@ vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
+-- Apperance
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.breakindent = true
