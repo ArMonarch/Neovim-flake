@@ -15,8 +15,9 @@ return {
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
         { "<leader>gh", group = "hunks" },
-        { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
+        { "<leader>o", group = "open" },
+        { "<leader>q", group = "quit/session" },
         { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "[", group = "prev" },
@@ -33,15 +34,17 @@ return {
   },
   
   keys = {
-    { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
+    -- { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
     { "<c-w><space>", function() require("which-key").show({ keys = {"<c-w>"}, loop = true }) end, desc = "Buffer Keymaps (which-key)" },
   },
   
   -- config = function(_, opts)
-  --   locak wk = require('which-key')
+  --   local wk = require('which-key')
   --   wk.setup()
   --   if not vim.tbl_isempty(opts.defaults) then
-  --     LazyVim.warn("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
+  --     -- FIX: add the LazyVim.warn function insted of lua print()
+  --     -- LazyVim.warn("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
+  --     print("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
   --     wl.register(opts.defaults)
   --   end
   -- end,
