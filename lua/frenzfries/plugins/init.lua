@@ -57,4 +57,7 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: Git Signs
   { import = 'frenzfries.plugins.git-signs' },
 
+  -- NOTE: Lualine
+  { import = 'frenzfries.plugins.lualine' },
+
 }, lazyOptions )
