@@ -7,4 +7,4 @@ end
 map( { "n", "i" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" } )
 
 -- Open Netrw explorer
-map( { "n" }, "<leader>on", "<cmd>Ex<cr>", { desc = "Open Netrw file explorer" })
+map( { "n" }, "<leader>sn", "<cmd>Ex<cr>", { desc = "Netrw File Explorer" })

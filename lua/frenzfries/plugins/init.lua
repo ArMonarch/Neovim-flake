@@ -45,6 +45,9 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   {'catppuccin/nvim'},
   {'sainnhe/gruvbox-material', config = function() vim.cmd.colorscheme("gruvbox-material") end},
 
+  -- NOTE: load mini-icons including nvim-dev-icons
+  { import = 'frenzfries.plugins.mini-icons' },
+
   -- NOTE: Which Keys
   { import = 'frenzfries.plugins.which-keys' },
 

@@ -70,12 +70,15 @@
           startupPlugins = with pkgs.vimPlugins; {
             gitPlugins = [ ];
             general = [ 
-              # NOTE: Themes
-              # to set themes check plugins.lua
+              # NOTE: Themes to set themes check plugins.lua
               tokyonight-nvim catppuccin-nvim gruvbox-material
               todo-comments-nvim
               which-key-nvim
               gitsigns-nvim
+
+              # NOTE: Needed to correctly display icons,
+              # many plugins depend on these for proper icons rendering, e.g. which-key
+              mini-icons
             ];
           };
 
