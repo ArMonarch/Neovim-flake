@@ -46,10 +46,12 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   {'sainnhe/gruvbox-material', config = function() vim.cmd.colorscheme("gruvbox-material") end},
 
   -- NOTE: Which Keys
-  {import = 'frenzfries.plugins.which-keys'},
+  { import = 'frenzfries.plugins.which-keys' },
 
   -- NOTE: Todo Comments
-  {import = 'frenzfries.plugins.todo-comments'},
+  { import = 'frenzfries.plugins.todo-comments' },
   
+  -- NOTE: Git Signs
+  { import = 'frenzfries.plugins.git-signs' },
 
 }, lazyOptions )

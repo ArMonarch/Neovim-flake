@@ -75,6 +75,7 @@
               tokyonight-nvim catppuccin-nvim gruvbox-material
               todo-comments-nvim
               which-key-nvim
+              gitsigns-nvim
             ];
           };
 
