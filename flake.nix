@@ -54,7 +54,7 @@
       # and
       # :help nixCats.flake.outputs.categoryDefinitions.scheme
       categoryDefinitions =
-        { pkgs, settings, categories, extra, name, mkPlugin, ... }@packageDef: {
+        { pkgs, settings, categories, extra, name, mkPlugin, ... } @ packageDef: {
           # to define and use a new category, simply add a new list to a set here, 
           # and later, you will include categoryname = true; in the set you
           # provide when you build the package using this builder function.
@@ -64,19 +64,28 @@
           # this section is for dependencies that should be available
           # at RUN TIME for plugins. Will be available to PATH within neovim terminal
           # this includes LSPs
-          lspsAndRuntimeDeps = with pkgs; { general = [ ripgrep fd ]; };
+          lspsAndRuntimeDeps = with pkgs; { general = [ ripgrep fd wl-clipboard universal-ctags stdenv.cc.cc]; };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = with pkgs.vimPlugins; {
             gitPlugins = [ ];
-            general = [ ];
+            general = [ 
+              # NOTE: Themes
+              # to set themes check plugins.lua
+              tokyonight-nvim catppuccin-nvim gruvbox-material
+              todo-comments-nvim
+              which-key-nvim
+            ];
           };
 
           # not loaded automatically at startup.
           # use with packadd and an autocommand in config to achieve lazy loading
+          # NOTE: this template is using lazy.nvim so, which list you put them in is irrelevant.
+          # startupPlugins or optionalPlugins, it doesnt matter, lazy.nvim does the loading.
+          # I just put them all in startupPlugins. I could have put them all in here instead.
           optionalPlugins = with pkgs.vimPlugins; {
             gitPlugins = [ ];
-            general = [ ];
+            general = [  ];
           };
 
           # shared libraries to be added to LD_LIBRARY_PATH
@@ -162,6 +171,8 @@
             gitPlugins = true;
             customPlugins = true;
             test = true;
+
+            colorscheme = "gruvbox-material";
 
             # this kickstart extra didnt require any extra plugins
             # so it doesnt have a category above.
