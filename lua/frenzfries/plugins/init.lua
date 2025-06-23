@@ -66,6 +66,9 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
 
   -- NOTE: Highlight, edit, and navigate code
   { import = 'frenzfries.plugins.treesitter' },
+
+  -- NOTE: Mini Pairs
+  { import = 'frenzfries.plugins.mini-pairs' }
 }, lazyOptions )
 
 -- NOTE: Set theme from nixCats config and activate it
