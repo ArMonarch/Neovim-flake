@@ -64,7 +64,7 @@
           # this section is for dependencies that should be available
           # at RUN TIME for plugins. Will be available to PATH within neovim terminal
           # this includes LSPs
-          lspsAndRuntimeDeps = with pkgs; { general = [ ripgrep fd wl-clipboard universal-ctags stdenv.cc.cc]; };
+          lspsAndRuntimeDeps = with pkgs; { general = [ ripgrep fd lazygit wl-clipboard universal-ctags ]; };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = with pkgs.vimPlugins; {
@@ -76,7 +76,49 @@
               which-key-nvim
               gitsigns-nvim
 
+              (nvim-treesitter.withPlugins(
+                plugins: with plugins; [
+                  bash
+                  c
+                  corn
+                  cpp
+                  css
+                  csv
+                  diff
+                  dockerfile
+                  html
+                  javascript
+                  jsdoc
+                  json
+                  jsonc
+                  latex
+                  lua
+                  luadoc
+                  luap
+                  markdown
+                  markdown-inline
+                  nginx
+                  nix
+                  printf
+                  python
+                  query
+                  regex
+                  rust
+                  sql
+                  toml
+                  tsx
+                  typescript
+                  vim
+                  vimdoc
+                  xml
+                  yaml
+                  zig
+                ]
+              ))
+
               lualine-nvim
+
+              snacks-nvim
 
               # NOTE: Needed to correctly display icons,
               # many plugins depend on these for proper icons rendering, e.g. which-key
@@ -178,6 +220,9 @@
             customPlugins = true;
             test = true;
 
+            # [ "tokyonight", "tokyonight-day":light, "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
+            # [ "catppuccin", "catppuccin-latte":light, "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha", ]
+            # [ "gruvbox-material" ]
             colorscheme = "gruvbox-material";
 
             # this kickstart extra didnt require any extra plugins

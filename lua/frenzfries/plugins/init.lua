@@ -43,7 +43,8 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   {'folke/tokyonight.nvim'},
   -- [ "catppuccin", "catppuccin-latte":light, "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha", ]
   {'catppuccin/nvim'},
-  {'sainnhe/gruvbox-material', config = function() vim.cmd.colorscheme("gruvbox-material") end},
+  -- [ "gruvbox-material" ]
+  {'sainnhe/gruvbox-material'},
 
   -- NOTE: load mini-icons including nvim-dev-icons
   { import = 'frenzfries.plugins.mini-icons' },
@@ -60,4 +61,16 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: Lualine
   { import = 'frenzfries.plugins.lualine' },
 
+  -- NOTE: Folke Snacks
+  { import = 'frenzfries.plugins.snacks' },
+
+  -- NOTE: Highlight, edit, and navigate code
+  { import = 'frenzfries.plugins.treesitter' },
 }, lazyOptions )
+
+-- NOTE: Set theme from nixCats config and activate it
+local colorscheme = nixCats( 'colorscheme' )
+if colorscheme == nil then
+  colorscheme = 'tokyonight-day'
+end
+vim.cmd.colorscheme( colorscheme )
