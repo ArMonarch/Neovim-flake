@@ -120,6 +120,8 @@
 
               snacks-nvim
 
+              smear-cursor-nvim
+
               # NOTE: Needed to correctly display icons,
               # many plugins depend on these for proper icons rendering, e.g. which-key
               mini-icons

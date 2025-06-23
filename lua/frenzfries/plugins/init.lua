@@ -49,6 +49,9 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: load mini-icons including nvim-dev-icons
   { import = 'frenzfries.plugins.mini-icons' },
 
+  -- NOTE: animate cursor
+  { import = 'frenzfries.plugins.smear-cursor' },
+
   -- NOTE: Which Keys
   { import = 'frenzfries.plugins.which-keys' },
 
@@ -68,7 +71,11 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   { import = 'frenzfries.plugins.treesitter' },
 
   -- NOTE: Mini Pairs
-  { import = 'frenzfries.plugins.mini-pairs' }
+  { import = 'frenzfries.plugins.mini-pairs' },
+
+  -- NOTE: Fuzzy Finder (files, lsp, etc) Telescope
+  { import = 'frenzfries.plugins.telescope' },
+
 }, lazyOptions )
 
 -- NOTE: Set theme from nixCats config and activate it
