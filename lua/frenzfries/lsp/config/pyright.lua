@@ -1,4 +1,4 @@
-local config = require "telescope.config"
+-- local config = require "telescope.config"
 -- local function set_python_path(path)
 --   local clients = vim.lsp.get_clients {
 --     bufnr = vim.api.nvim_get_current_buf(),
@@ -52,16 +52,16 @@ local config = require "telescope.config"
 --   end,
 -- })
 
-vim.lsp.config('pyright', {
-  cmd = { 'pyright-langserver', '--stdio'},
-  filetype = { 'python' },
-  root_markers = {
-    'pyproject.toml',
-    'setup.py',
-    'setup.cfg',
-    'requirements.txt',
-    'Pipfile',
-    'pyrightconfig.json',
-    '.git',
-  },
-})
+-- vim.lsp.config('pyright', {
+--   cmd = { 'pyright-langserver', '--stdio'},
+--   filetype = { 'python' },
+--   root_markers = {
+--     'pyproject.toml',
+--     'setup.py',
+--     'setup.cfg',
+--     'requirements.txt',
+--     'Pipfile',
+--     'pyrightconfig.json',
+--     '.git',
+--   },
+-- })
