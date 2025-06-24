@@ -26,7 +26,7 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { 
+    keymap = {
       preset = 'super-tab',
     },
 
@@ -41,13 +41,20 @@ return {
       accept = { auto_brackets = { enabled = true, }, },
       menu = { draw = { treesitter = { 'lsp' }, }, },
       documentation = { auto_show = true, auto_show_delay_ms = 200, },
-      ghost_text = { enabled = vim.g.ai_cmp,},
+      ghost_text = { enabled = true,},
     },
+
+    signature = { enabled = true },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
+
+      per_filetype = {
+        lua = { inherit_defaults = true, 'lazydev'},
+      },
+
       providers = {
         lazydev = {
           name = 'LazyDev',
