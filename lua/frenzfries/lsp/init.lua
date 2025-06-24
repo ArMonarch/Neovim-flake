@@ -1,8 +1,3 @@
--- Set root markers for ALL clients
--- vim.lsp.config('*', {
---   root_markers = { '.git', '.hg' },
--- })
-
 require('frenzfries.lsp.config.nix')
 require('frenzfries.lsp.config.lua_ls')
 require('frenzfries.lsp.config.pyright')
@@ -18,6 +13,9 @@ vim.lsp.enable('pyright')
 vim.lsp.enable('rust-analyzer')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('zls')
+
+-- Enable Inlay Hints
+vim.lsp.inlay_hint.enable(true)
 
 --  This function gets run when an LSP attaches to a particular buffer.
 vim.api.nvim_create_autocmd('LspAttach', {
