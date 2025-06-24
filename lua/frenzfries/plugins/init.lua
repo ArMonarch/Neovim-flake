@@ -67,6 +67,9 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: Folke Snacks
   { import = 'frenzfries.plugins.snacks' },
 
+  -- NOTE: better comments
+  { import = 'frenzfries.plugins.ts-comments'},
+
   -- NOTE: Highlight, edit, and navigate code
   { import = 'frenzfries.plugins.treesitter' },
 

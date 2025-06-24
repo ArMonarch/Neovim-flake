@@ -142,6 +142,7 @@
               lualine-nvim
 
               snacks-nvim
+              ts-comments-nvim
 
               smear-cursor-nvim
 
