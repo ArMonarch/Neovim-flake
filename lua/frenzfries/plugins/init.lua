@@ -57,7 +57,10 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
 
   -- NOTE: Todo Comments
   { import = 'frenzfries.plugins.todo-comments' },
-  
+
+  -- NOTE: better diagnostics list and others
+  { import = 'frenzfries.plugins.trouble' },
+
   -- NOTE: Git Signs
   { import = 'frenzfries.plugins.git-signs' },
 

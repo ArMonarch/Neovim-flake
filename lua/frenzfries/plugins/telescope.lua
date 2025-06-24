@@ -20,7 +20,6 @@ return {
     local builtin = require('telescope.builtin')
 
     return {
-      -- NOTE: Not_Needed?
       { "<leader>/", builtin.live_grep, desc = "Grep (Root Dir)" },
       { "<leader>:", builtin.command_history, desc = "Command History" },
       { "<leader><space>", builtin.find_files, desc = "Find Files (Root Dir)" },

@@ -87,6 +87,7 @@
               todo-comments-nvim
               which-key-nvim
               gitsigns-nvim
+              trouble-nvim
 
               # NOTE: Telescope packages
               plenary-nvim
