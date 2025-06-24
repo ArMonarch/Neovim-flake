@@ -18,6 +18,11 @@ vim.opt.smartcase = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.inccommand = "split"
+
 -- sync clipboard between OS and neovim
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
@@ -26,6 +31,9 @@ end)
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
+
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -49,5 +57,4 @@ vim.opt.scrolloff = 10
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
 vim.opt.breakindent = true
