@@ -17,6 +17,22 @@ return {
   },
 
   keys = function()
+    local symbols_filter = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Field",
+      "Function",
+      "Interface",
+      "Method",
+      "Module",
+      "Namespace",
+      "Package",
+      "Property",
+      "Struct",
+      "Trait",
+    }
+
     local builtin = require('telescope.builtin')
 
     return {
@@ -32,55 +48,53 @@ return {
       -- { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
       { "<leader>ff", builtin.find_files, desc = "Find Files (Root Dir)" },
       { "<leader>fF", function() builtin.find_files({ cwd = vim.fn.expand('%:p:h') }) end, desc = "Find Files (cwd)" },
-      -- { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
-      -- { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      -- { "<leader>fR", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fg", builtin.git_files, desc = "Find Files (git-files)" },
+      { "<leader>fr", builtin.oldfiles, desc = "Recent" },
+      { "<leader>fR", function() builtin.oldfiles({ cwd = vim.fn.expand('%:p:h') }) end, desc = "Recent (cwd)" },
+
       -- git
       { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
       { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
+
       -- search
-      -- { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
-      -- { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
-      -- { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
-      -- { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      -- { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-      -- { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
-      -- { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
-      -- { "<leader>sg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-      -- { "<leader>sG", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
-      -- { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
-      -- { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
-      -- { "<leader>sj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
-      -- { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
-      -- { "<leader>sl", "<cmd>Telescope loclist<cr>", desc = "Location List" },
-      -- { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
-      -- { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
-      -- { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
-      -- { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      -- { "<leader>sq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix List" },
-      -- { "<leader>sw", LazyVim.pick("grep_string", { word_match = "-w" }), desc = "Word (Root Dir)" },
-      -- { "<leader>sW", LazyVim.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (cwd)" },
-      -- { "<leader>sw", LazyVim.pick("grep_string"), mode = "v", desc = "Selection (Root Dir)" },
-      -- { "<leader>sW", LazyVim.pick("grep_string", { root = false }), mode = "v", desc = "Selection (cwd)" },
-      -- { "<leader>uC", LazyVim.pick("colorscheme", { enable_preview = true }), desc = "Colorscheme with Preview" },
-      -- {
-      --   "<leader>ss",
-      --   function()
-      --     require("telescope.builtin").lsp_document_symbols({
-      --       symbols = LazyVim.config.get_kind_filter(),
-      --     })
-      --   end,
-      --   desc = "Goto Symbol",
-      -- },
-      -- {
-      --   "<leader>sS",
-      --   function()
-      --     require("telescope.builtin").lsp_dynamic_workspace_symbols({
-      --       symbols = LazyVim.config.get_kind_filter(),
-      --     })
-      --   end,
-      --   desc = "Goto Symbol (Workspace)",
-      -- },
+      { '<leader>s"', builtin.registers, desc = "Registers" },
+      { '<leader>sa', builtin.autocommands, desc = "Auto Commands" },
+      { "<leader>sb", builtin.current_buffer_fuzzy_find, desc = "Buffer" },
+      { "<leader>sc", builtin.command_history, desc = "Command History" },
+      { "<leader>sC", builtin.commands, desc = "Commands" },
+      { "<leader>sd", function() builtin.diagnostics( {bufnr = 0} ) end, desc = "Document Diagnostics" },
+      { "<leader>sD", builtin.diagnostics, desc = "Workspace Diagnostics" },
+      { "<leader>sg", builtin.live_grep, desc = "Grep (Root Dir)" },
+      { "<leader>sG", function() builtin.live_grep( { cwd = vim.fn.expand('%:p:h') } ) end, desc = "Grep (cwd)" },
+      { "<leader>sh", builtin.help_tags, desc = "Help Pages" },
+      { "<leader>sH", builtin.highlights, desc = "Search Highlight Groups" },
+      { "<leader>sj", builtin.jumplist, desc = "Jumplist" },
+      { "<leader>sk", builtin.keymaps, desc = "Key Maps" },
+      { "<leader>sl", builtin.loclist, desc = "Location List" },
+      { "<leader>sM", builtin.man_pages, desc = "Man Pages" },
+      { "<leader>sm", builtin.marks, desc = "Jump to Mark" },
+      { "<leader>so", builtin.vim_options, desc = "Options" },
+      { "<leader>sr", builtin.resume , desc = "Resume" },
+      { "<leader>sq", builtin.quickfix, desc = "Quickfix List" },
+      { "<leader>sw", builtin.grep_string, desc = "Word (Root Dir)" },
+      { "<leader>sw", builtin.grep_string, mode = 'v', desc = "Word (Root Dir)" },
+      { "<leader>sW", function() builtin.grep_string( { cwd = vim.fn.expand('%:p:h') } ) end, desc = "Word (cwd)" },
+      { "<leader>sW", function() builtin.grep_string( { cwd = vim.fn.expand('%:p:h') } ) end, mode = 'v', desc = "Word (cwd)" },
+      { "<leader>uC", function() builtin.colorscheme( { enable_preview = true } ) end, desc = "Colorscheme with Preview" },
+      {
+        "<leader>ss",
+        function()
+          builtin.lsp_document_symbols( {symbols = symbols_filter} )
+        end,
+        desc = "Goto Symbol (filter)",
+      },
+      {
+        "<leader>sS",
+        function()
+          builtin.lsp_dynamic_workspace_symbols( {symbols = symbols_filter} )
+        end,
+        desc = "Goto Symbol (Workspace)",
+      },
     }
   end,
 
