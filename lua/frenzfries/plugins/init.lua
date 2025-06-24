@@ -75,6 +75,12 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
 
   -- NOTE: Fuzzy Finder (files, lsp, etc) Telescope
   { import = 'frenzfries.plugins.telescope' },
+  
+  -- NOTE: properly configures LuaLS for editing your Neovim config
+  { import = 'frenzfries.plugins.lazydev'},
+  
+  -- NOTE:: autocomplete via blink.cmp
+  { import = 'frenzfries.plugins.blink-cmp'},
 
 }, lazyOptions )
 

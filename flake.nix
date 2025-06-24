@@ -64,7 +64,15 @@
           # this section is for dependencies that should be available
           # at RUN TIME for plugins. Will be available to PATH within neovim terminal
           # this includes LSPs
-          lspsAndRuntimeDeps = with pkgs; { general = [ ripgrep fd lazygit wl-clipboard universal-ctags ]; };
+          lspsAndRuntimeDeps = with pkgs; { general = [ 
+            ripgrep fd
+            lazygit
+            wl-clipboard
+            universal-ctags 
+            # Language Servers
+            lua-language-server
+            nixd
+          ]; };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = with pkgs.vimPlugins; {
@@ -75,6 +83,12 @@
               todo-comments-nvim
               which-key-nvim
               gitsigns-nvim
+
+              # NOTE: Telescope packages
+              plenary-nvim
+              telescope-nvim
+              telescope-zf-native-nvim
+              telescope-ui-select-nvim
 
               (nvim-treesitter.withPlugins(
                 plugins: with plugins; [
@@ -115,6 +129,11 @@
                   zig
                 ]
               ))
+
+              blink-cmp
+              friendly-snippets
+
+              lazydev-nvim
 
               lualine-nvim
 
