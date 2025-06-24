@@ -1,4 +1,4 @@
-return { 
+return {
   {
     'nvim-treesitter/nvim-treesitter',
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
@@ -26,7 +26,7 @@ return {
       },
 
       textobjects = {
-        move = { 
+        move = {
           enable = true,
           goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
           goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
@@ -40,6 +40,7 @@ return {
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
+
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
       -- There are additional nvim-treesitter modules that you can use to interact
