@@ -9,11 +9,12 @@ return {
     input = { enabled = false },
     lazygit = { enabled = true },
     picker = { enabled = false },
-    notifier = { enabled = false },
+    notifier = { enabled = true },
     quickfile = { enabled = false },
     scope = { enabled = false },
     scroll = { enabled = false },
     statuscolumn = { enabled = false },
+    toggle = { },
     util = { enabled = false },
     words = { enabled = false }
   },
