@@ -70,6 +70,7 @@
             wl-clipboard
             universal-ctags 
             # Language Servers
+            marksman
             lua-language-server
             nixd
             pyright
@@ -88,6 +89,7 @@
               which-key-nvim
               gitsigns-nvim
               trouble-nvim
+              markview-nvim
 
               # NOTE: Telescope packages
               plenary-nvim

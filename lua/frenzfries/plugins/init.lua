@@ -13,7 +13,7 @@ local lazyOptions = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',  
+      cmd = '⌘',
       config = '🛠',
       event = '📅',
       ft = '📂',
@@ -73,18 +73,21 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: better comments
   { import = 'frenzfries.plugins.ts-comments'},
 
+  -- NOTE: Fuzzy Finder (files, lsp, etc) Telescope
+  { import = 'frenzfries.plugins.telescope' },
+
+  -- NOTE: Markdown preview
+  { import = 'frenzfries.plugins.markview' },
+
   -- NOTE: Highlight, edit, and navigate code
   { import = 'frenzfries.plugins.treesitter' },
 
   -- NOTE: Mini Pairs
   { import = 'frenzfries.plugins.mini-pairs' },
 
-  -- NOTE: Fuzzy Finder (files, lsp, etc) Telescope
-  { import = 'frenzfries.plugins.telescope' },
-  
   -- NOTE: properly configures LuaLS for editing your Neovim config
   { import = 'frenzfries.plugins.lazydev'},
-  
+
   -- NOTE:: autocomplete via blink.cmp
   { import = 'frenzfries.plugins.blink-cmp'},
 
