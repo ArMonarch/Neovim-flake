@@ -43,15 +43,17 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- tab / indentation
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.wrap = true
+vim.opt.tabstop = 2 -- Number of spaces tabs count for
+vim.opt.shiftwidth = 2 -- Size of an indent
+vim.opt.shiftround = true -- Round Indent
+-- vim.opt.softtabstop = 2
+vim.opt.expandtab = true -- Use spaces instead of tab
+vim.opt.smartindent = true -- Insert indents automatically
+vim.opt.wrap = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8 -- Columns of context
 
 -- Apperance
 vim.opt.number = true
