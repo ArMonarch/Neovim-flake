@@ -89,7 +89,7 @@
               which-key-nvim
               gitsigns-nvim
               trouble-nvim
-              markview-nvim
+              render-markdown-nvim
 
               # NOTE: Telescope packages
               plenary-nvim

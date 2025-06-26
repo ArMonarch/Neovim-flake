@@ -77,7 +77,7 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   { import = 'frenzfries.plugins.telescope' },
 
   -- NOTE: Markdown preview
-  { import = 'frenzfries.plugins.markview' },
+  { import = 'frenzfries.plugins.render-markdown' },
 
   -- NOTE: Highlight, edit, and navigate code
   { import = 'frenzfries.plugins.treesitter' },
