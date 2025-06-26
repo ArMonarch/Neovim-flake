@@ -1,6 +1,6 @@
-local lazydev = require "lazydev"
 return {
   'saghen/blink.cmp',
+  event = 'InsertEnter',
   -- optional: provides snippets for the snippet source
   dependencies = { 'rafamadriz/friendly-snippets' },
 
