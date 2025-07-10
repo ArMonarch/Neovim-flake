@@ -46,7 +46,7 @@ return {
         desc = "Buffers",
       },
       -- { "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
-      { "<leader>ff", builtin.find_files, desc = "Find Files (Root Dir)" },
+      { "<leader>ff", function() builtin.find_files({ cwd = Snacks.git.get_root() }) end, desc = "Find Files (Root Dir)" },
       { "<leader>fF", function() builtin.find_files({ cwd = vim.fn.expand('%:p:h') }) end, desc = "Find Files (cwd)" },
       { "<leader>fg", builtin.git_files, desc = "Find Files (git-files)" },
       { "<leader>fr", builtin.oldfiles, desc = "Recent" },
