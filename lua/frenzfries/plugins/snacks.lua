@@ -5,6 +5,7 @@ return {
   opts = {
     dashboard = { enabled = false },
     explorer = { enabled = false },
+    git = { enabled = true },
     indent = { enabled = true },
     input = { enabled = false },
     lazygit = { enabled = true },

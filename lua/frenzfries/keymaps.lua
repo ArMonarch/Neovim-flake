@@ -1,3 +1,4 @@
+local snacks = require "frenzfries.plugins.snacks"
 -- function for easier keymap setting
 local function map(mode, keys, func, options)
   vim.keymap.set(mode, keys, func, options)
@@ -54,14 +55,10 @@ map( { "n" }, "<leader>sn", "<cmd>Ex<cr>", { desc = "Netrw File Explorer" })
 
 -- LazyGit
 if vim.fn.executable('lazygit') == 1 then
-
-  -- TODO: Lazygit Root Directory [Snacks.lazygit({ cwd = root.git() })](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/root.lua#L178)
-  map('n', '<leader>gg', function() Snacks.lazygit() end, { desc = "Lazygit (Root Dir)" })
+  map('n', '<leader>gg', function() Snacks.lazygit({ cwd = Snacks.git.get_root() }) end, { desc = "Lazygit (Root Dir)" })
   map('n', '<leader>gG', function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
-
-  -- TODO: map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = LazyVim.root.git() }) end, { desc = "Git Log" })
-  map("n", "<leader>gl", function() Snacks.picker.git_log() end, { desc = "Git Log" })
+  map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = Snacks.git.get_root() }) end, { desc = "Git Log" })
   map("n", "<leader>gL", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
 end
 
