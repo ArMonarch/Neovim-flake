@@ -13,6 +13,7 @@ local lsp_hishlight = vim.api.nvim_create_augroup('lsp-hishlight', { clear = fal
 vim.api.nvim_create_autocmd({'CursorMoved', 'cursorMovedI'}, {
   desc = 'Highlight refrences of the word under the cursor',
   group = lsp_hishlight,
+  pattern = {'*.c', '*.h', '*.py', '*.rs', '*.lua', '*.nix', '*.js', '*.ts', '*.jsx', '*.tsx', '*.zig'},
   callback = vim.lsp.buf.document_highlight,
 })
 
@@ -20,6 +21,7 @@ vim.api.nvim_create_autocmd({'CursorMoved', 'cursorMovedI'}, {
 vim.api.nvim_create_autocmd({'CursorMoved', 'cursorMovedI'}, {
   desc = 'Highlight refrences of the word under the cursor',
   group = lsp_hishlight,
+  pattern = {'*.c', '*.h', '*.py', '*.rs', '*.lua', '*.nix', '*.js', '*.ts', '*.jsx', '*.tsx', '*.zig'},
   callback = vim.lsp.buf.clear_references,
 })
 
