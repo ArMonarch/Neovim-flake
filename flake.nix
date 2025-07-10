@@ -3,7 +3,7 @@
 
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     # nixcats added here
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
