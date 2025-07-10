@@ -88,8 +88,11 @@ require("nixCatsUtils.lazyCat").setup( nixCats.pawsible { 'allPlugins', 'start',
   -- NOTE: properly configures LuaLS for editing your Neovim config
   { import = 'frenzfries.plugins.lazydev'},
 
-  -- NOTE:: autocomplete via blink.cmp
+  -- NOTE: autocomplete via blink.cmp
   { import = 'frenzfries.plugins.blink-cmp'},
+
+  -- NOTE: conform formatter
+  { import = 'frenzfries.plugins.conform' },
 
 }, lazyOptions )
 
