@@ -87,7 +87,7 @@
           marksman
           lua-language-server
           nixd
-          pyright
+          basedpyright
           rust-analyzer
           typescript-language-server
           zls
@@ -208,7 +208,6 @@
       # at RUN TIME for plugins. Will be available to path within neovim terminal
       environmentVariables = {
         test = {
-          CATTESTVAR = "It worked!";
           ECHO = "echo";
         };
       };
