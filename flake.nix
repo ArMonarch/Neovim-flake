@@ -287,7 +287,7 @@
           # [ "tokyonight", "tokyonight-day":light, "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
           # [ "catppuccin", "catppuccin-latte":light, "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha", ]
           # [ "gruvbox-material" ]
-          colorscheme = "tokyonight-storm";
+          colorscheme = "tokyonight-night";
 
           # this kickstart extra didnt require any extra plugins
           # so it doesnt have a category above.
