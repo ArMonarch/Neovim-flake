@@ -39,14 +39,14 @@ require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", 
 	-- NOTE: Themes
 	-- Choose theme by using the config option.
 
-	-- [ "tokyonight", "tokyonight-day":light, "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
+	-- [ "tokyonight", "tokyonight-day", "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
 	{ "folke/tokyonight.nvim" },
-	-- [ "catppuccin", "catppuccin-latte":light, "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha", ]
-	{ "catppuccin/nvim" },
+	-- [ "catppuccin", "catppuccin-latte", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha" ]
+	{ "catppuccin/nvim", name = "catppuccin.nvim" },
 	-- [ "gruvbox-material" ]
 	{ "sainnhe/gruvbox-material" },
-	-- [ "rose-pine"]
-	{ "rose-pine/neovim" },
+	-- [ "rose-pine", "rose-pine-main", "rose-pine-moon", "rose-pine-dawn" ]
+	{ "rose-pine/neovim", name = "rose-pine.nvim", opts = { styles = { transparency = true } } },
 
 	-- NOTE: load mini-icons including nvim-dev-icons
 	{ import = "frenzfries.plugins.mini-icons" },
