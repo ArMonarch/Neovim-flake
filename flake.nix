@@ -106,10 +106,6 @@
       startupPlugins = with pkgs.vimPlugins; {
         gitPlugins = [];
         general = [
-          # NOTE: Themes to set themes check plugins.lua
-          tokyonight-nvim
-          catppuccin-nvim
-          gruvbox-material
           todo-comments-nvim
           which-key-nvim
           gitsigns-nvim
@@ -206,43 +202,13 @@
       # environmentVariables:
       # this section is for environmentVariables that should be available
       # at RUN TIME for plugins. Will be available to path within neovim terminal
-      environmentVariables = {
-        test = {
-          ECHO = "echo";
-        };
-      };
+      environmentVariables = {};
 
       # If you know what these are, you can provide custom ones by category here.
       # If you dont, check this link out:
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
-      extraWrapperArgs = {
-        test = [''--set CATTESTVAR2 "It worked again!"''];
-      };
-
-      # lists of the functions you would have passed to
-      # python.withPackages or lua.withPackages
-      # do not forget to set `hosts.python3.enable` in package settings
-
-      # get the path to this python environment
-      # in your lua config via
-      # vim.g.python3_host_prog
-      # or run from nvim terminal via :!<packagename>-python3
-      python3.libraries = {test = _: [];};
-      # populates $LUA_PATH and $LUA_CPATH
-      extraLuaPackages = {test = [(_: [])];};
+      extraWrapperArgs = {};
     };
-
-    # lists of the functions you would have passed to
-    # python.withPackages or lua.withPackages
-    # do not forget to set `hosts.python3.enable` in package settings
-
-    # get the path to this python environment
-    # in your lua config via
-    # vim.g.python3_host_prog
-    # or run from nvim terminal via :!<packagename>-python3
-    python3.libraries = {test = _: [];};
-    # populates $LUA_PATH and $LUA_CPATH
-    extraLuaPackages = {test = [(_: [])];};
 
     # And then build a package with specific categories from above here:
     # All categories you wish to include must be marked true,
@@ -253,7 +219,7 @@
     packageDefinitions = {
       # These are the names of your packages
       # you can include as many as you wish.
-      nvim = {
+      neovim = {
         pkgs,
         name,
         ...
@@ -266,8 +232,7 @@
           wrapRc = true;
           #IMPORTANT:
           # your alias may not conflict with your other packages.
-          aliases = ["vim"];
-          # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+          aliases = ["nvim"];
           hosts.python3.enable = true;
           hosts.node.enable = true;
         };
@@ -284,10 +249,11 @@
           # pass this option from nix to lua config
           formatters = true;
 
-          # [ "tokyonight", "tokyonight-day":light, "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
-          # [ "catppuccin", "catppuccin-latte":light, "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha", ]
+          # [ "tokyonight", "tokyonight-day", "tokyonight-storm", "tokyonight-moon", "tokyonight-night" ]
+          # [ "catppuccin", "catppuccin-latte", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha" ]
           # [ "gruvbox-material" ]
-          colorscheme = "tokyonight-night";
+          # [ "rose-pine", "rose-pine-main", "rose-pine-moon", "rose-pine-dawn" ]
+          colorscheme = "rose-pine-main";
 
           # this kickstart extra didnt require any extra plugins
           # so it doesnt have a category above.
@@ -302,7 +268,7 @@
 
     # In this section, the main thing you will need to do is change the default package name
     # to the name of the packageDefinitions entry you wish to use as the default.
-    defaultPackageName = "nvim";
+    defaultPackageName = "neovim";
     # see :help nixCats.flake.outputs.exports
   in
     forEachSystem (system: let
