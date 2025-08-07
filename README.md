@@ -13,7 +13,7 @@ A Neovim flake with proper plugins and lsp setup for working on NixOS
 
 # Installation
 
-# Project Structure
+# Repository Structure
 
 # Visuals
 todo!()
@@ -33,5 +33,5 @@ todo!()
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/ArMonarch/Neovim-flake/blob/master/LICENSE) file for details.
 
 <div align="center">
-    <img src="https://img.shields.io/github/license/ashish0kumar/tint?style=for-the-badge&color=CBA6F7&logoColor=cdd6f4&labelColor=302D41" alt="License MIT"/>
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8" alt="License MIT"/>
 </div>
