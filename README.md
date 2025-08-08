@@ -79,22 +79,23 @@ Make sure you have Nix with the following enabled:
 
 ### Installation Methods
 
-  1. NixOS Configuration (Recommended for system-wide use)
-    - Add the following to your `configuration.nix`
-    ```nix
-      TODO!
-    ```
-  2. Directly via `nix profile (flake url)`
-   - Install from GitHub using flake Url:
-   ```nix
-      nix profile install github:ArMonarch/Neovim-flake
-   ```
+#### 1. NixOS Configuration (Recommended for system-wide use)
+  - Add the following to your `configuration.nix`
+  ```nix
+  TODO!();
+  ```
 
-  3. Run Temporary | Test Neovim before Installing
-    - Install from GitHub using flake Url:
-   ```nix
-      nix flake run github:ArMonarch/Neovim-flake
-   ```
+#### 2. Directly via `nix profile (flake url)`
+  - Install from GitHub using flake Url:
+  ```nix
+  nix profile install github:ArMonarch/Neovim-flake
+  ```
+
+#### 3. Run Temporary | Test Neovim before Installing
+  - Install from GitHub using flake Url:
+  ```nix
+  nix flake run github:ArMonarch/Neovim-flake
+  ```
 
 ## Visuals
 
