@@ -3,8 +3,9 @@ require("frenzfries.options")
 
 -- NOTE: Add LSP & Plugins before keymaps and autocmds as some
 -- of the keymaps and autocmd depend upon these plugins
--- NOTE: module for configuring LSPs
-require('frenzfries.lsp')
+
+-- Setup & Config for LSP Server per language
+require("frenzfries.lsp")
 
 -- load plugins
 require("frenzfries.plugins")
