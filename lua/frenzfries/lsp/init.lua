@@ -1,4 +1,5 @@
 require("frenzfries.lsp.config.marksman")
+require("frenzfries.lsp.config.nil_ls")
 require("frenzfries.lsp.config.nixd")
 require("frenzfries.lsp.config.lua_ls")
 require("frenzfries.lsp.config.basedpyright")
@@ -9,6 +10,7 @@ require("frenzfries.lsp.config.zls")
 -- NOTE: Enable Language Servers here,
 -- needs Neovim v0.11+, as it used functions available on Neovim version >= 0.11
 vim.lsp.enable("marksman")
+vim.lsp.enable("nil_ls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("basedpyright")
