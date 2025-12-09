@@ -23,7 +23,8 @@ if nixCats("formatters") then
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				nix = { "alejandra" },
+				-- nix = { "alejandra" },
+				nix = { "nixfmt-rfc-style" },
 				sh = { "shfmt" },
 				python = { "ruff" },
 				rust = { "rustfmt", lsp_format = "fallback" },

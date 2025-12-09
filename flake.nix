@@ -9,7 +9,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixCats,
     ...
@@ -87,6 +86,7 @@
           marksman
           lua-language-server
           nixd
+          nil
           basedpyright
           rust-analyzer
           typescript-language-server
@@ -94,6 +94,7 @@
 
           # Formatters
           alejandra
+          nixfmt-rfc-style
           stylua
           shfmt
           ruff
