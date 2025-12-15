@@ -1,11 +1,11 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.localleader = ' '
+vim.g.mapleader = " "
+vim.g.localleader = " "
 
 -- Set to true if Nerd Font is installed and selected in the terminal
-vim.g.have_nerd_font = nixCats 'have_nerd_font'
+vim.g.have_nerd_font = nixCats("have_nerd_font")
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 -- search
@@ -16,7 +16,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -26,11 +26,11 @@ vim.opt.inccommand = "split"
 -- sync clipboard between OS and neovim
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -57,6 +57,6 @@ vim.opt.sidescrolloff = 8 -- Columns of context
 
 -- Apperance
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.breakindent = true
